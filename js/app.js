@@ -14,7 +14,7 @@
   const cookieBanner = document.getElementById('cookieBanner');
   const cookieAccept = document.getElementById('cookieAccept');
   const cookieReject = document.getElementById('cookieReject');
-  const whatsappNumber = '60162062490';
+  const whatsappNumber = '60178801714';
   const consentCookie = 'kalimh_cookie_consent';
   const consentDays = 180;
   const staticLanguage = root.lang === 'ar' ? 'ar' : 'en';

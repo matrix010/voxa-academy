@@ -10,6 +10,9 @@
   const accommodationType = document.getElementById('accommodationType');
   const groupSizeRow = document.getElementById('groupSizeRow');
   const groupSize = document.getElementById('groupSize');
+  const studyGoal = document.getElementById('studyGoal');
+  const studyDurationRow = document.getElementById('studyDurationRow');
+  const studyDuration = document.getElementById('studyDuration');
   const consentField = document.getElementById('consentField');
   const cookieBanner = document.getElementById('cookieBanner');
   const cookieAccept = document.getElementById('cookieAccept');
@@ -201,7 +204,7 @@
     });
   });
 
-  if (form && feedback && accommodationType && groupSizeRow && groupSize && consentField) {
+  if (form && feedback && accommodationType && groupSizeRow && groupSize && studyGoal && studyDurationRow && studyDuration && consentField) {
     const updateStartDate = () => {
       const input = document.getElementById('startDate');
       if (!input) return;
@@ -226,6 +229,22 @@
       if (!needsGroupSize) {
         groupSize.value = '';
         clearFieldError(groupSize);
+      }
+    };
+
+    const updateStudyDuration = () => {
+      const studyTypesThatNeedDuration = ['english', 'pathway'];
+      const needsStudyDuration = studyTypesThatNeedDuration.includes(studyGoal.value);
+
+      studyDurationRow.hidden = !needsStudyDuration;
+      studyDurationRow.style.display = needsStudyDuration ? '' : 'none';
+      studyDurationRow.setAttribute('aria-hidden', String(!needsStudyDuration));
+      studyDuration.required = needsStudyDuration;
+      studyDuration.disabled = !needsStudyDuration;
+
+      if (!needsStudyDuration) {
+        studyDuration.value = '';
+        clearFieldError(studyDuration);
       }
     };
     const validationMessage = (field) => {
@@ -268,7 +287,10 @@
 
     updateStartDate();
     updateGroupSize();
+    updateStudyDuration();
+
     accommodationType.addEventListener('change', updateGroupSize);
+    studyGoal.addEventListener('change', updateStudyDuration);
     form.querySelectorAll('input, select, textarea').forEach((field) => {
       const eventName = field.type === 'checkbox' || field.tagName === 'SELECT' ? 'change' : 'input';
       field.addEventListener(eventName, () => validateField(field));
@@ -277,6 +299,7 @@
       event.preventDefault();
       clearFeedback();
       updateGroupSize();
+      updateStudyDuration();
       const fields = [...form.querySelectorAll('input, select, textarea')].filter((field) => field.type !== 'hidden');
       const invalidField = fields.find((field) => !validateField(field));
       if (invalidField) {
@@ -284,9 +307,10 @@
         invalidField.focus();
         return;
       }
-      const ids = ['fullName', 'phone', 'email', 'destination', 'studyGoal', 'startDate', 'accommodationType', 'area', 'groupSize', 'accommodationRequests'];
+      const ids = ['fullName', 'phone', 'email', 'destination', 'studyGoal', 'studyDuration', 'startDate', 'accommodationType', 'area', 'groupSize', 'accommodationRequests'];
       const rows = ids
         .filter((id) => id !== 'groupSize' || !groupSizeRow.hidden)
+        .filter((id) => id !== 'studyDuration' || !studyDurationRow.hidden)
         .map((id) => `${labelText(id)}: ${selectedText(id)}`)
         .filter((line) => !line.endsWith(': '));
       const greeting = currentLanguage === 'ar'

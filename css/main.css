@@ -38,7 +38,7 @@
       pointer-events: none;
       opacity: .12;
       mix-blend-mode: multiply;
-      background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+      background-image: url("../assets/images/noise.png");
     }
     .journey-card:nth-child(1) {
       background-image:
@@ -141,7 +141,7 @@
     .hero-note strong { flex: 0 0 auto; color: var(--moss); font-family: "Cormorant Garamond", serif; font-size: 3.3rem; font-weight: 300; font-style: italic; line-height: .8; letter-spacing: -.05em; }
     .hero-note p { color: var(--stone); font-size: .9rem; line-height: 1.75; }
     .hero-visual { grid-column: 2; position: relative; min-height: min(68vh, 660px); }
-    .hero-card { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: clamp(28px, 4vw, 52px); overflow: hidden; background: linear-gradient(to top, rgba(43,45,66,.72), rgba(43,45,66,.06) 68%), url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=88") center / cover; box-shadow: var(--shadow); }
+    .hero-card { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: clamp(28px, 4vw, 52px); overflow: hidden; background: linear-gradient(to top, rgba(43,45,66,.72), rgba(43,45,66,.06) 68%), url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&q=80") center / cover; box-shadow: var(--shadow); }
     .hero-card::before { content: ""; position: absolute; inset: 17px; border: 1px solid rgba(249,247,242,.34); pointer-events: none; }
     .hero-card > * { position: relative; z-index: 1; }
     .hero-card-kicker, .hero-card-foot { color: rgba(249,247,242,.78); font-size: .6rem; font-weight: 500; letter-spacing: .34em; text-transform: uppercase; }
@@ -185,8 +185,8 @@
 
     /* Journey */
     .journey-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: clamp(19px, 2.6vw, 38px); }
-    .journey-card { position: relative; min-height: 490px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(26px,3.4vw,42px); background: linear-gradient(to top, rgba(43,45,66,.88), rgba(43,45,66,.09) 66%), url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1300&q=85") center / cover; }
-    .journey-card:nth-child(2) { background-image: linear-gradient(to top, rgba(43,45,66,.88), rgba(43,45,66,.09) 66%), url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1300&q=85"); }
+    .journey-card { position: relative; min-height: 490px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(26px,3.4vw,42px); background: linear-gradient(to top, rgba(43,45,66,.88), rgba(43,45,66,.09) 66%), url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1100&q=80") center / cover; }
+    .journey-card:nth-child(2) { background-image: linear-gradient(to top, rgba(43,45,66,.88), rgba(43,45,66,.09) 66%), url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1100&q=80"); }
 .journey-card:nth-child(3) { background-image: linear-gradient( to top, rgba(43, 45, 66, 0.90), rgba(43, 45, 66, 0.16) 68% ), url("https://unsplash.com/photos/qK6HAkB91Yc/download?force=true"); background-position: center; background-size: cover; background-repeat: no-repeat; }    .journey-card > * { position: relative; z-index: 1; }
     .journey-index { color: rgba(249,247,242,.74); font-size: .6rem; font-weight: 500; letter-spacing: .32em; text-transform: uppercase; }
     .journey-card h3 { margin-top: 18px; color: var(--linen); font-size: clamp(2.1rem,3.3vw,3.5rem); line-height: .93; font-style: italic; letter-spacing: -.045em; }
@@ -209,6 +209,10 @@
     .form-section:last-of-type { border-bottom: 0; }
     .form-title { display: flex; align-items: center; gap: 14px; margin-bottom: 30px; font-size: clamp(1.85rem,2.8vw,2.6rem); font-style: italic; line-height: 1; }
     .step { width: 38px; height: 38px; display: inline-grid; place-items: center; flex: 0 0 auto; color: var(--moss); border: 1px solid rgba(107,112,92,.54); font-family: "Inter", sans-serif; font-size: .61rem; letter-spacing: .1em; }
+    /* Never allow layout rules to override the native hidden state. */
+    [hidden],
+    .form-row[hidden],
+    #studyDurationRow[hidden] { display: none !important; }
     .form-row { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 23px; margin-top: 22px; }
     .form-row:first-of-type { margin-top: 0; }
     .field.full { grid-column: 1 / -1; }
@@ -480,7 +484,7 @@ html[lang="ar"] .form-intro h2 {
   background-color: #2B2D42;
   background-image:
     linear-gradient(rgba(43, 45, 66, 0.88), rgba(43, 45, 66, 0.88)),
-    url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    url("../assets/images/noise.png");
   background-repeat: repeat;
   background-size: auto, 180px 180px;
   background-position: center, 0 0;
@@ -496,7 +500,7 @@ html[lang="ar"] .form-intro h2 {
   pointer-events: none;
   opacity: 0.16;
   mix-blend-mode: soft-light;
-  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  background-image: url("../assets/images/noise.png");
   background-repeat: repeat;
   background-size: 180px 180px;
 }
@@ -1020,3 +1024,669 @@ html[lang="ar"] #about .about-visual figcaption {
   }
 }
 
+/* Reviews + FAQ add-on for Kalimh Academy */
+
+.section-subtext {
+  margin-top: 24px;
+  max-width: 640px;
+  color: var(--stone);
+  font-size: 0.96rem;
+  line-height: 1.9;
+}
+
+.reviews-carousel {
+  position: relative;
+  overflow: visible;
+}
+
+.reviews-viewport {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  outline: none;
+  position: relative;
+}
+
+.reviews-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 56px) / 3);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.review-card {
+  scroll-snap-align: start;
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(24px, 3vw, 34px);
+  border: 1px solid rgba(43, 45, 66, 0.13);
+  background:
+    linear-gradient(145deg, rgba(255, 253, 249, 0.78), rgba(234, 227, 214, 0.38));
+  box-shadow: 0 18px 54px rgba(43, 45, 66, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.review-label {
+  width: max-content;
+  padding: 7px 10px;
+  border: 1px solid rgba(107, 112, 92, 0.22);
+  color: var(--moss);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.review-card p {
+  margin: 28px 0;
+  color: var(--charcoal);
+  font-size: clamp(1rem, 1.2vw, 1.08rem);
+  line-height: 1.95;
+}
+
+.review-card strong {
+  color: var(--stone);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  z-index: 8;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(43, 45, 66, 0.18);
+  background: rgba(249, 247, 242, 0.92);
+  color: var(--charcoal);
+  font-size: 2rem;
+  line-height: 1;
+  transform: translateY(-50%);
+  box-shadow: 0 14px 38px rgba(43, 45, 66, 0.08);
+  transition: background 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+}
+
+.carousel-button:hover {
+  background: var(--charcoal);
+  color: var(--linen);
+}
+
+.carousel-button:disabled {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ============================================
+   Carousel arrow positioning — RTL-aware
+   Uses logical properties for LTR/RTL support
+   ============================================ */
+
+.carousel-button-prev {
+  inset-inline-start: -24px;
+  inset-inline-end: auto;
+}
+
+.carousel-button-next {
+  inset-inline-end: -24px;
+  inset-inline-start: auto;
+}
+
+.faq-list {
+  width: min(100%, 940px);
+  margin-inline: auto;
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  border: 1px solid rgba(43, 45, 66, 0.13);
+  background: rgba(255, 253, 249, 0.62);
+  box-shadow: 0 14px 42px rgba(43, 45, 66, 0.04);
+}
+
+.faq-item summary {
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+  padding: 23px 64px 23px 26px;
+  color: var(--charcoal);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+html[dir="rtl"] .faq-item summary {
+  padding: 23px 26px 23px 64px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  inset-inline-end: 26px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--moss);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 26px 24px;
+  color: var(--stone);
+  line-height: 1.9;
+}
+
+@media (max-width: 640px) {
+  .faq-item summary {
+    padding: 20px 54px 20px 20px;
+  }
+
+  html[dir="rtl"] .faq-item summary {
+    padding: 20px 20px 20px 54px;
+  }
+
+  .faq-item summary::after {
+    inset-inline-end: 20px;
+  }
+
+  .faq-item p {
+    padding: 0 20px 22px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .reviews-track {
+    grid-auto-columns: calc((100% - 28px) / 2);
+  }
+}
+
+@media (max-width: 720px) {
+  .reviews-track {
+    grid-auto-columns: 100%;
+  }
+
+  .carousel-button {
+    top: auto;
+    bottom: -64px;
+    transform: none;
+  }
+
+  .carousel-button-prev {
+    inset-inline-start: 0;
+    inset-inline-end: auto;
+  }
+
+  .carousel-button-next {
+    inset-inline-end: 0;
+    inset-inline-start: auto;
+  }
+
+  .reviews-section {
+    padding-bottom: calc(clamp(92px, 11vw, 156px) + 74px);
+  }
+}
+
+/* RTL slider fix:
+   The Arabic page is RTL, but browser horizontal scrollLeft is inconsistent in RTL.
+   Keep the carousel mechanics LTR, then put Arabic text direction back inside each card. */
+.reviews-carousel,
+.reviews-viewport,
+.reviews-track {
+  direction: ltr;
+}
+
+html[dir="rtl"] .review-card {
+  direction: rtl;
+  text-align: right;
+}
+/* =========================================================
+   Kalimh Academy — consolidated production improvements
+   ========================================================= */
+
+/* Performance and rendering stability */
+.grain {
+  opacity: .065;
+  background-repeat: repeat;
+  background-size: 96px 96px;
+}
+
+@supports (content-visibility: auto) {
+  main > .section {
+    content-visibility: auto;
+    contain-intrinsic-size: 900px;
+  }
+}
+
+/* Active navigation is announced visually and by aria-current in app.js. */
+.nav-links a[aria-current="location"]::after,
+.mobile-menu a[aria-current="location"]::after {
+  transform: scaleX(1);
+}
+
+.mobile-menu a[aria-current="location"] {
+  color: var(--moss);
+}
+
+/* Trust and credibility section */
+.trust-section {
+  background: var(--paper);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid var(--line);
+}
+
+.trust-card {
+  position: relative;
+  min-height: 310px;
+  padding: clamp(30px, 3.8vw, 52px);
+  border-inline-end: 1px solid var(--line);
+  background: rgba(255, 253, 249, .74);
+}
+
+.trust-card:last-child {
+  border-inline-end: 0;
+}
+
+.trust-number {
+  display: inline-block;
+  color: var(--moss);
+  font-size: .61rem;
+  font-weight: 500;
+  letter-spacing: .28em;
+}
+
+.trust-card h3 {
+  margin-top: clamp(54px, 6vw, 82px);
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  font-style: italic;
+  line-height: .98;
+  letter-spacing: -.035em;
+}
+
+.trust-card p {
+  margin-top: 19px;
+  color: var(--stone);
+  font-size: .94rem;
+  line-height: 1.85;
+}
+
+html[lang="ar"] .trust-card {
+  direction: rtl;
+  text-align: right;
+}
+
+html[lang="ar"] .trust-number {
+  font-family: "Zain", sans-serif;
+  letter-spacing: 0;
+}
+
+html[lang="ar"] .trust-card h3 {
+  font-family: "Zain", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+/* Form integration, fallback controls, and spam protection */
+.hp-field {
+  position: absolute !important;
+  inline-size: 1px !important;
+  block-size: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+}
+
+.form-submit:disabled {
+  cursor: wait;
+  opacity: .65;
+}
+
+.form-submit.is-loading span::after {
+  content: "…";
+  margin-inline-start: .3em;
+}
+
+.form-fallback {
+  width: min(100%, 560px);
+  margin: 14px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.form-fallback[hidden] {
+  display: none;
+}
+
+.form-fallback-link,
+.form-copy-button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border: 1px solid rgba(43, 45, 66, .28);
+  background: transparent;
+  color: var(--charcoal);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transition: background .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.form-fallback-link:hover,
+.form-copy-button:hover,
+.form-fallback-link:focus-visible,
+.form-copy-button:focus-visible {
+  background: var(--moss);
+  border-color: var(--moss);
+  color: var(--linen);
+}
+
+html[lang="ar"] .form-fallback-link,
+html[lang="ar"] .form-copy-button {
+  font-family: "Zain", sans-serif;
+  font-size: .9rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* Carousel: visible state, keyboard controls and slide indicators */
+.reviews-viewport:focus-visible {
+  outline: 2px solid var(--moss);
+  outline-offset: 7px;
+}
+
+.carousel-button {
+  min-width: 48px;
+  min-height: 48px;
+}
+
+.carousel-button:disabled {
+  opacity: .28;
+  visibility: visible;
+  pointer-events: none;
+}
+
+.carousel-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.carousel-status {
+  color: var(--stone);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.carousel-dot {
+  width: 30px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  position: relative;
+}
+
+.carousel-dot::before {
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto;
+  height: 2px;
+  transform: translateY(-50%);
+  background: rgba(43, 45, 66, .2);
+  transition: background .25s ease, transform .25s ease;
+}
+
+.carousel-dot.is-active::before,
+.carousel-dot:hover::before,
+.carousel-dot:focus-visible::before {
+  background: var(--moss);
+  transform: translateY(-50%) scaleY(2);
+}
+
+html[lang="ar"] .carousel-status {
+  font-family: "Zain", sans-serif;
+  font-size: .9rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* FAQ keyboard focus and open-state refinement */
+.faq-item summary:focus-visible {
+  outline: 2px solid var(--moss);
+  outline-offset: -2px;
+}
+
+.faq-item[open] {
+  border-color: rgba(107, 112, 92, .38);
+  background: var(--paper);
+}
+
+/* Safer touch targets and fixed controls */
+.language-toggle,
+.menu-toggle,
+.mobile-menu a,
+.cookie-button,
+.whatsapp-float {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.whatsapp-float {
+  inset-block-end: max(24px, env(safe-area-inset-bottom));
+  inset-inline-end: max(24px, env(safe-area-inset-right));
+}
+
+html[lang="ar"] .whatsapp-float {
+  inset-inline: max(24px, env(safe-area-inset-left)) auto;
+  inset-block-end: max(24px, env(safe-area-inset-bottom));
+}
+
+/* Prevent long headings and URLs from causing horizontal overflow. */
+.section-title,
+.hero-title,
+.hero-card-title,
+.form-intro h2,
+.review-card p,
+.faq-item summary {
+  overflow-wrap: anywhere;
+}
+
+/* Mobile refinements */
+@media (max-width: 1060px) and (min-width: 821px) {
+  .nav-links {
+    gap: clamp(12px, 1.7vw, 24px);
+    font-size: .56rem;
+    letter-spacing: .22em;
+  }
+
+  .nav-actions {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 820px) {
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-card {
+    min-height: 250px;
+    border-inline-end: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .trust-card:last-child {
+    border-bottom: 0;
+  }
+
+  .trust-card h3 {
+    margin-top: 42px;
+  }
+
+  .form-card,
+  .form-intro {
+    min-width: 0;
+  }
+
+  .form-section,
+  .submit-area {
+    padding-inline: clamp(22px, 6vw, 34px);
+  }
+
+  .carousel-meta {
+    padding-inline: 58px;
+  }
+
+  .carousel-status {
+    letter-spacing: .08em;
+  }
+
+  .cookie-banner {
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .container,
+  .nav-inner {
+    width: min(var(--max), calc(100% - 32px));
+  }
+
+  .hero {
+    padding-top: 98px;
+  }
+
+  .hero-title {
+    font-size: clamp(3.05rem, 15.4vw, 4.7rem);
+    line-height: .91;
+  }
+
+  html[lang="ar"] .hero-title {
+    font-size: clamp(2.9rem, 13.5vw, 4.3rem);
+    line-height: 1.02;
+  }
+
+  .hero-subtitle {
+    margin-top: 24px;
+    line-height: 1.75;
+  }
+
+  .hero-visual,
+  html[lang="ar"] .hero-visual {
+    min-height: 390px;
+  }
+
+  .hero-card {
+    padding: 27px;
+  }
+
+  .hero-card-title {
+    font-size: clamp(2.45rem, 12vw, 3.65rem);
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .section-header {
+    margin-bottom: 42px;
+  }
+
+  .section-title {
+    font-size: clamp(2.65rem, 12.2vw, 4rem);
+  }
+
+  html[lang="ar"] .section-title {
+    font-size: clamp(2.65rem, 11.5vw, 3.9rem);
+    line-height: 1.08;
+  }
+
+  .review-card {
+    min-height: 330px;
+    padding: 25px;
+  }
+
+  .carousel-meta {
+    padding-inline: 0;
+    margin-top: 78px;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-fallback {
+    flex-direction: column;
+  }
+
+  .form-fallback-link,
+  .form-copy-button {
+    width: 100%;
+  }
+
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    inset-block-end: max(16px, env(safe-area-inset-bottom));
+    inset-inline-end: max(16px, env(safe-area-inset-right));
+  }
+
+  html[lang="ar"] .whatsapp-float {
+    inset-inline: max(16px, env(safe-area-inset-left)) auto;
+    inset-block-end: max(16px, env(safe-area-inset-bottom));
+  }
+}
+
+@media (forced-colors: active) {
+  .button,
+  .form-submit,
+  .carousel-button,
+  .carousel-dot,
+  .faq-item,
+  .trust-card {
+    forced-color-adjust: auto;
+  }
+}
